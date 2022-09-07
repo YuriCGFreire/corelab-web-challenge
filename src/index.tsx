@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ToastContainer } from 'react-toastify';
+import VehicleContextProvider from './contexts/VehicleState';
 import './index.module.scss';
+import 'react-toastify/dist/ReactToastify.css'
 import VehiclesPage from './pages/Vehicles';
 import reportWebVitals from './reportWebVitals';
 
@@ -9,7 +12,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <VehiclesPage />
+    <VehicleContextProvider>
+      <VehiclesPage />
+    </VehicleContextProvider>
+    <ToastContainer/>
   </React.StrictMode>
 );
 

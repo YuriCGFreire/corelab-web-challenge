@@ -1,12 +1,16 @@
+import styles from "./Search.module.scss"
+
 interface ISearch {
-  placeholder: string;
   value: string;
-  onChange: () => void;
+  onChange: (e: any) => void;
 }
 
 const Search = (props: ISearch) => {
   return (
-    <input type="text" placeholder={props.placeholder} value={props.value} />
+    <div className={styles.search_filter}>
+      <label>Search</label>
+      <input className={styles.input} type="text" value={props.value} onChange={props.onChange} />
+    </div>
   );
 };
 
